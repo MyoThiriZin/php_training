@@ -10,6 +10,7 @@
     <h1>Upload Image Here!</h1>
     <form name="form" method="post" action="upload.php" enctype="multipart/form-data" >
         <input type="file" name="my_file" /><br /><br />
+        Type Folder Name:<input type="text" name="foldername" /><br/><br/>
         <input type="submit" name="submit" value="Upload"/>
     </form>
 </body>
