@@ -60,8 +60,7 @@ h1.center{
         <?php
         if(isset($_GET['dob']) && $_GET['dob']!=''){?>
             <div class="result-wrapper">
-            
-            <?php echo getAge($_GET['dob']);?>
+                <?php echo getAge($_GET['dob']);?>
             </div>
         <?php }
         ?>
