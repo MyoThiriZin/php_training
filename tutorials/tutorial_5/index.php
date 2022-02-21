@@ -49,7 +49,7 @@
             $outtext = preg_replace("/[^a-zA-Z0-9\s\,\.\-\n\r\t@\/\_\(\)]/","",$outtext);
             return $outtext;
         }
-        $userDoc = "test.docx";
+        $userDoc = "test.doc";
         $text = parseWord($userDoc);
         echo $text;
     ?> 
