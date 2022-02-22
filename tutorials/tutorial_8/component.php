@@ -13,11 +13,11 @@ function inputElement($icon, $placeholder, $name, $value){
     $ele = "
         
         <div>
-                        <div>
-                            <div>$icon</div>
-                        </div>
-                        <input type=\"text\" name='$name' value='$value' autocomplete=\"off\" placeholder='$placeholder' class=\"form-control\" id=\"inlineFormInputGroup\" placeholder=\"Username\">
-                    </div>
+            <div>
+                <div>$icon</div>
+            </div>
+            <input type=\"text\" name='$name' value='$value' autocomplete=\"off\" placeholder='$placeholder' class=\"form-control\" id=\"inlineFormInputGroup\" placeholder=\"Username\">
+        </div>
     
     ";
     echo $ele;

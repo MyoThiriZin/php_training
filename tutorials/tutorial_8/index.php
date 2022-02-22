@@ -19,17 +19,17 @@ require_once ("operation.php");
         <div>
             <form action="" method="post">
                 <div>
-                    <?php inputElement("<i class='fas fa-id-badge'></i>","ID", "book_id",setID()); ?>
+                    <?php inputElement("<i class='fas fa-id-badge'></i>", "ID", "book_id",setID()); ?>
                 </div>
                 <div>
-                    <?php inputElement("<i class='fas fa-book'></i>","Book Name", "book_name",""); ?>
+                    <?php inputElement("<i class='fas fa-book'></i>", "Book Name", "book_name",""); ?>
                 </div>
                 <div>
                     <div>
-                        <?php inputElement("<i class='fas fa-people-carry'></i>","Publisher", "book_publisher",""); ?>
+                        <?php inputElement("<i class='fas fa-people-carry'></i>", "Publisher", "book_publisher",""); ?>
                     </div>
                     <div>
-                        <?php inputElement("<i class='fas fa-dollar-sign'></i>","Price", "book_price",""); ?>
+                        <?php inputElement("<i class='fas fa-dollar-sign'></i>", "Price", "book_price",""); ?>
                     </div>
                 </div>
                 <div>
@@ -58,10 +58,10 @@ require_once ("operation.php");
                         while ($row = mysqli_fetch_assoc($result)){ ?>
 
                             <tr>
-                                <td data-id="<?php echo $row['id']; ?>"><?php echo $row['id']; ?></td>
-                                <td data-id="<?php echo $row['id']; ?>"><?php echo $row['book_name']; ?></td>
-                                <td data-id="<?php echo $row['id']; ?>"><?php echo $row['book_publisher']; ?></td>
-                                <td data-id="<?php echo $row['id']; ?>"><?php echo '$' . $row['book_price']; ?></td>
+                                <td><?php echo $row['id']; ?></td>
+                                <td><?php echo $row['book_name']; ?></td>
+                                <td><?php echo $row['book_publisher']; ?></td>
+                                <td><?php echo '$' . $row['book_price']; ?></td>
                             </tr>
 
                         <?php

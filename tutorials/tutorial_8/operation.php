@@ -19,10 +19,6 @@ if(isset($_POST['create'])){
     createData();
 }
 
-if(isset($_POST['update'])){
-    UpdateData();
-}
-
 if(isset($_POST['delete'])){
     deleteRecord();
 }
@@ -79,31 +75,6 @@ function getData(){
     }
 }
 
-// update dat
-function UpdateData(){
-    $bookid = textboxValue("book_id");
-    $bookname = textboxValue("book_name");
-    $bookpublisher = textboxValue("book_publisher");
-    $bookprice = textboxValue("book_price");
-
-    if($bookname && $bookpublisher && $bookprice){
-        $sql = "
-                    UPDATE books SET book_name='$bookname', book_publisher = '$bookpublisher', book_price = '$bookprice' WHERE id='$bookid';                    
-        ";
-
-        if(mysqli_query($GLOBALS['con'], $sql)){
-            TextNode("success", "Data Successfully Updated");
-        }else{
-            TextNode("error", "Enable to Update Data");
-        }
-
-    }else{
-        TextNode("error", "Select Data Using Edit Icon");
-    }
-
-
-}
-
 function deleteRecord(){
     $bookid = (int)textboxValue("book_id");
 
@@ -131,7 +102,6 @@ function deleteBtn(){
     }
 }
 
-
 function deleteAll(){
     $sql = "DROP TABLE books";
 
@@ -142,7 +112,6 @@ function deleteAll(){
         TextNode("error","Something Went Wrong Record cannot deleted...!");
     }
 }
-
 
 // set id to textbox
 function setID(){
