@@ -1,3 +1,12 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Operation</title>
+</head>
+<body>
 <?php
 
 require_once ("db.php");
@@ -53,13 +62,11 @@ function textboxValue($value){
     }
 }
 
-
 // messages
 function TextNode($classname, $msg){
     $element = "<h6 class='$classname'>$msg</h6>";
     echo $element;
 }
-
 
 // get data from mysql database
 function getData(){
@@ -97,7 +104,6 @@ function UpdateData(){
 
 }
 
-
 function deleteRecord(){
     $bookid = (int)textboxValue("book_id");
 
@@ -110,7 +116,6 @@ function deleteRecord(){
     }
 
 }
-
 
 function deleteBtn(){
     $result = getData();
@@ -150,6 +155,9 @@ function setID(){
     }
     return ($id + 1);
 }
+?>
+</body>
+</html>
 
 
 
