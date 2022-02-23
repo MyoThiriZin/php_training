@@ -19,6 +19,10 @@ if(isset($_POST['create'])){
     createData();
 }
 
+if(isset($_POST['update'])){
+    UpdateData();
+}
+
 if(isset($_POST['delete'])){
     deleteRecord();
 }
@@ -41,7 +45,7 @@ function createData(){
         if(mysqli_query($GLOBALS['con'], $sql)){
             TextNode("success", "Record Successfully Inserted...!");
         }else{
-            echo "Error";
+            TextNode("error", "Please fill only numbers for price.");
         }
 
     }else{
@@ -58,11 +62,13 @@ function textboxValue($value){
     }
 }
 
+
 // messages
 function TextNode($classname, $msg){
     $element = "<h6 class='$classname'>$msg</h6>";
     echo $element;
 }
+
 
 // get data from mysql database
 function getData(){
@@ -74,6 +80,32 @@ function getData(){
         return $result;
     }
 }
+
+// update dat
+function UpdateData(){
+    $bookid = textboxValue("book_id");
+    $bookname = textboxValue("book_name");
+    $bookpublisher = textboxValue("book_publisher");
+    $bookprice = textboxValue("book_price");
+
+    if($bookname && $bookpublisher && $bookprice){
+        $sql = "
+                    UPDATE books SET book_name='$bookname', book_publisher = '$bookpublisher', book_price = '$bookprice' WHERE id='$bookid';                    
+        ";
+
+        if(mysqli_query($GLOBALS['con'], $sql)){
+            TextNode("success", "Data Successfully Updated");
+        }else{
+            TextNode("error", "Enable to Update Data");
+        }
+
+    }else{
+        TextNode("error", "Select Data Using Edit Icon");
+    }
+
+
+}
+
 
 function deleteRecord(){
     $bookid = (int)textboxValue("book_id");
@@ -87,6 +119,7 @@ function deleteRecord(){
     }
 
 }
+
 
 function deleteBtn(){
     $result = getData();
@@ -102,6 +135,7 @@ function deleteBtn(){
     }
 }
 
+
 function deleteAll(){
     $sql = "DROP TABLE books";
 
@@ -112,6 +146,7 @@ function deleteAll(){
         TextNode("error","Something Went Wrong Record cannot deleted...!");
     }
 }
+
 
 // set id to textbox
 function setID(){

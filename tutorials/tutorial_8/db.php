@@ -13,13 +13,17 @@ function Createdb(){
     $servername = "localhost";
     $username = "root";
     $password = "1234";
-    $dbname = "new_schema";
+    $dbname = "new_table";
+
+    // create connection
     $con = mysqli_connect($servername, $username, $password);
 
+    // Check Connection
     if (!$con){
         die("Connection Failed : " . mysqli_connect_error());
     }
 
+    // create Database
     $sql = "CREATE DATABASE IF NOT EXISTS $dbname";
 
     if(mysqli_query($con, $sql)){
@@ -43,6 +47,7 @@ function Createdb(){
     }else{
         echo "Error while creating database ". mysqli_error($con);
     }
+
 }
 ?>
 </body>
