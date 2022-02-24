@@ -1,7 +1,5 @@
-
 let id = $("input[name*='book_id']")
 id.attr("readonly","readonly");
-
 
 $(".btnedit").click( e =>{
     let textvalues = displayData(e);
@@ -17,7 +15,6 @@ $(".btnedit").click( e =>{
     bookprice.val(textvalues[3].replace("$", ""));
 });
 
-
 function displayData(e) {
     let id = 0;
     const td = $("#tbody tr td");
@@ -29,5 +26,4 @@ function displayData(e) {
         }
     }
     return textvalues;
-
 }

@@ -21,3 +21,7 @@ table .btnedit{
     background-color: tomato;
     padding: 1em;
 }
+.fas{
+    font-weight: 900;
+    font-family: 'Font Awesome 6 Free';
+}

@@ -62,13 +62,11 @@ function textboxValue($value){
     }
 }
 
-
 // messages
 function TextNode($classname, $msg){
     $element = "<h6 class='$classname'>$msg</h6>";
     echo $element;
 }
-
 
 // get data from mysql database
 function getData(){
@@ -102,10 +100,7 @@ function UpdateData(){
     }else{
         TextNode("error", "Select Data Using Edit Icon");
     }
-
-
 }
-
 
 function deleteRecord(){
     $bookid = (int)textboxValue("book_id");
@@ -117,9 +112,7 @@ function deleteRecord(){
     }else{
         TextNode("error","Enable to Delete Record...!");
     }
-
 }
-
 
 function deleteBtn(){
     $result = getData();
@@ -135,7 +128,6 @@ function deleteBtn(){
     }
 }
 
-
 function deleteAll(){
     $sql = "DROP TABLE books";
 
@@ -146,7 +138,6 @@ function deleteAll(){
         TextNode("error","Something Went Wrong Record cannot deleted...!");
     }
 }
-
 
 // set id to textbox
 function setID(){
@@ -162,11 +153,3 @@ function setID(){
 ?>
 </body>
 </html>
-
-
-
-
-
-
-
-
