@@ -84,5 +84,7 @@ require_once ("operation.php");
         </div>
     </div>
     <a href="chart_sample.html">Click here to see graph of book price.</a>
+    <script src="jquery-3.6.0.min.js"></script>
+    <script src="main.js"></script>
 </body>
 </html>
