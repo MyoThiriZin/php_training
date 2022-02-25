@@ -177,7 +177,7 @@ function valid_email($email)
                 </span>
                 <input type="text" placeholder="Enter code" name="code"><br><br>
                 <input type="submit" value="Next">
-                <a href="forgot.php"><input type="button" value="Resend code"></a><br><br>
+                <a href="forgot.php"><input type="button" value="Restart"></a><br><br>
                 <div><a href="index.php">Login</a></div>
             </form>
         </div>
@@ -203,7 +203,7 @@ function valid_email($email)
                 <input type="text" placeholder="Password" name="password"><br><br>
                 <input type="text" placeholder="Retype Password" name="password2"><br><br>
                 <input type="submit" value="Next">
-                <a href="forgot.php"><input type="button" value="Start Over"></a><br><br>
+                <a href="forgot.php"><input type="button" value="Restart"></a><br><br>
                 <div><a href="index.php">Login</a></div>
             </form>
         </div>
