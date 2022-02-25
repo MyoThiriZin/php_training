@@ -1,17 +1,40 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Read Contents</title>
+</head>
 <body>
-    <?php
-        $files = array("test.txt", "test.csv");
-
-        $data = "";
-        foreach ($files as $file) {
-            $data .= @file_get_contents($file)."<br/>";
+    <style>
+        h2{
+            color: blue;
         }
-        
-    echo $data;
+        table, tr {
+        border: 1px solid black;
+        border-collapse: collapse
+        }
+    </style>
+    <?php
+        $myfile = fopen("test.txt", "r") or die("Unable to open file!");
+        while(!feof($myfile)) {
+            echo "<h2>TXT FILE</h2>";
+            echo fgets($myfile) . "<br>";
+        }
+        fclose($myfile);
     ?>
 
+    <?php
+        $myfile = fopen("test.csv", "r") or die("Unable to open file!");
+        while(!feof($myfile)) {
+            echo "<h2>CSV FILE</h2>";
+            echo fgets($myfile) . "<br>";
+        }
+        fclose($myfile);
+    ?>
+
+    <h2>XLSX FILE</h2>
     <table>
         <?php
             require "vendor/autoload.php";
@@ -30,6 +53,7 @@
         ?>
     </table>
     
+    <h2>DOC FILE</h2>
     <?php  
         function parseWord($userDoc)
         {

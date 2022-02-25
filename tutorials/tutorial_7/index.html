@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Generate QR Code</title>
+</head>
+<body>
+    <style>
+        h1{
+            text-align: center;
+        }
+        form{
+            border: 1px solid black;
+            display: inline-block;
+            padding: 30px;
+            margin: 0 35%;
+            background-color: #fabcbb;
+        }
+    </style>
+    <h1>Generate QR Code Here!</h1>
+    <div id="wrapper">
+        <form method="post" action="upload.php">
+            <label for="qr">QR Content</label>
+            <input type="file" name="qr_text"><br/><br/>
+            <label for="folder">Folder Name</label>
+            <input type="text" name="folder"><br/><br/>
+            <input type="submit" name="generate_text" value="Generate">
+        </form>
+    </div>
+
+</body>
+</html>

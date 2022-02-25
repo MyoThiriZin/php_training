@@ -7,10 +7,23 @@
     <title>Upload Image</title>
 </head>
 <body>
+    <style>
+        h1{
+            text-align: center;
+        }
+        form{
+            border: 1px solid black;
+            display: inline-block;
+            padding: 30px;
+            margin: 0 35%;
+            background-color: #fabcbb;
+        }
+    </style>
     <h1>Upload Image Here!</h1>
     <form name="form" method="post" action="upload.php" enctype="multipart/form-data" >
         <input type="file" name="my_file" /><br /><br />
-        Type Folder Name:<input type="text" name="foldername" /><br/><br/>
+        <label for="folder">Folder Name:</label>
+        <input type="text" name="foldername" /><br/><br/>
         <input type="submit" name="submit" value="Upload"/>
     </form>
 </body>
