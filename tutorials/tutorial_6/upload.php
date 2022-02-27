@@ -13,19 +13,19 @@
             if($_POST['foldername'] != "")
             {
                 $foldername=$_POST['foldername'];
-                if(!is_dir($foldername)){mkdir($foldername);}
-                echo "Folder is uploaded successfully. ";
-            }
-            elseif ($_POST['foldername'] = "$foldername") {
-                echo "Sorry, folder already exists.";
+                if(!is_dir($foldername)){
+                    mkdir($foldername);
+                    echo "Folder is uploaded successfully. ";
+                }
+                elseif (file_exists($foldername)) {
+                    echo "Sorry, folder already exists.";
+                }
             }
             else
                 echo "Upload folder name is empty. ";
         }
-            
 
-
-        if (($_FILES['my_file']['name']!="")){
+        if (($_FILES['my_file']['name']!="" & $_POST['foldername'] != "")){
             $target_dir = $foldername;
             $file = $_FILES['my_file']['name'];
             $path = pathinfo($file);
@@ -34,13 +34,17 @@
             $temp_name = $_FILES['my_file']['tmp_name'];
             $path_filename_ext = $target_dir."/".$filename.".".$ext;
         
-            if (file_exists($path_filename_ext)) {
-                echo "Sorry, file already exists.";
+            if ($ext=="jpg" || $ext=="jpeg" || $ext=="png"){
+                if (file_exists($path_filename_ext)) {
+                    echo "Sorry, file already exists.";
+                }else{
+                    move_uploaded_file($temp_name,$path_filename_ext);
+                    echo "Congratulations! File is uploaded successfully.";
+                }
             }else{
-                move_uploaded_file($temp_name,$path_filename_ext);
-                echo "Congratulations! File is uploaded successfully.";
+                echo "Only jpg/jpeg and png files are allowed!";
             }
-        }
+        }     
     ?>
 </body>
 </html>

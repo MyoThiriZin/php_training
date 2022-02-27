@@ -21,22 +21,6 @@
                 echo "Upload folder name is empty. ";
         }
 
-        if (($_FILES['qr_text']['name']!="")){
-            $target_dir = $foldername;
-            $file = $_FILES['qr_text']['name'];
-            $path = pathinfo($file);
-            $filename = $path['filename'];
-            $ext = $path['extension'];
-            $temp_name = $_FILES['qr_text']['tmp_name'];
-            $path_filename_ext = $target_dir."/".$filename.".".$ext;
-        
-            if (file_exists($path_filename_ext)) {
-                echo "Sorry, file already exists.";
-            }else{
-                move_uploaded_file($temp_name,$path_filename_ext);
-                echo "Congratulations! File is uploaded successfully.";
-            }
-        }
         include('phpqrcode/qrlib.php'); 
         if(isset($_POST['generate_text'])){
             $text=$_POST['qr_text'];

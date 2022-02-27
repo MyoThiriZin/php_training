@@ -107,7 +107,7 @@ function deleteRecord(){
 
     $sql = "DELETE FROM books WHERE id=$bookid";
 
-    if(mysqli_query($GLOBALS['con'], $sql)){
+    if(mysqli_query($GLOBALS['con'], $sql) & $bookid=(int)$sql){
         TextNode("success","Record Deleted Successfully...!");
     }else{
         TextNode("error","Enable to Delete Record...!");
