@@ -9,26 +9,25 @@ use Illuminate\Http\Request;
 
 class TaskService implements TaskServiceInterface
 {
+    private $taskDao;
 
-  private $taskDao;
+    public function __construct(TaskDaoInterface $taskDao)
+    {
+        $this->taskDao = $taskDao;
+    }
 
-  public function __construct(TaskDaoInterface $taskDao)
-  {
-    $this->taskDao = $taskDao;
-  }
+    public function saveTask(Request $request)
+    {
+        return $this->taskDao->saveTask($request);
+    }
 
-  public function saveTask(Request $request)
-  {
-    return $this->taskDao->saveTask($request);
-  }
+    public function getTaskList()
+    {
+        return $this->taskDao->getTaskList();
+    }
 
-  public function getTaskList()
-  {
-    return $this->taskDao->getTaskList();
-  }
-
-  public function deleteTaskById($id)
-  {
-    return $this->taskDao->deleteTaskById($id);
-  }
+    public function deleteTaskById($id)
+    {
+        return $this->taskDao->deleteTaskById($id);
+    }
 }

@@ -8,25 +8,24 @@ use Illuminate\Http\Request;
 
 class TaskDao implements TaskDaoInterface
 {
-  public function saveTask(Request $request)
-  {
-    $task = new Task();
-    $task->name = $request['name'];
-    $task->save();
-    return $task;
-  }
+    public function saveTask(Request $request)
+    {
+        $task = new Task();
+        $task->name = $request['name'];
+        $task->save();
+        return $task;
+    }
 
-  public function getTaskList()
-  {
-    $tasks = Task::all();
-    return $tasks;
-  }
+    public function getTaskList()
+    {
+        $tasks = Task::all();
+        return $tasks;
+    }
 
-  public function deleteTaskById($id)
-  {
-    $task = Task::find($id);
-    $task->delete();
-    return 'Deleted Successfully!';
-  }
-
+    public function deleteTaskById($id)
+    {
+        $task = Task::find($id);
+        $task->delete();
+        return 'Deleted Successfully!';
+    }
 }

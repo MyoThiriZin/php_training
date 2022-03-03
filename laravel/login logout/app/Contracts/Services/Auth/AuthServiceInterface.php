@@ -2,10 +2,9 @@
 
 namespace App\Contracts\Services\Auth;
 
-
 interface AuthServiceInterface
 {
-  public function saveUser($request);
+    public function saveUser($request);
 
-  public function loginUser($request);
+    public function loginUser($request);
 }

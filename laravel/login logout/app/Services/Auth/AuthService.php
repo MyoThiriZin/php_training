@@ -10,26 +10,25 @@ use App\Contracts\Services\Auth\AuthServiceInterface;
 
 class AuthService implements AuthServiceInterface
 {
+    private $authDao;
 
-  private $authDao;
-
-  public function __construct(AuthDaoInterface $authDao)
-  {
-    $this->authDao = $authDao;
-  }
-
-  public function saveUser($request)
-  {
-    return $this->authDao->saveUser($request);
-  }
-
-  public function loginUser($request){
-    $credentials = $request->only('email', 'password');
-    if (Auth::attempt($credentials)) {
-      return redirect()->intended('/')
-                    ->withSuccess('You have Successfully loggedin');
-    }else{
-      return redirect("login")->withSuccess('Oppes! You have entered invalid credentials');
+    public function __construct(AuthDaoInterface $authDao)
+    {
+        $this->authDao = $authDao;
     }
-  }
+
+    public function saveUser($request)
+    {
+        return $this->authDao->saveUser($request);
+    }
+
+    public function loginUser($request){
+        $credentials = $request->only('email', 'password');
+        if (Auth::attempt($credentials)) {
+        return redirect()->intended('/')
+                        ->withSuccess('You have Successfully loggedin');
+        }else{
+        return redirect("login")->withSuccess('Oppes! You have entered invalid credentials');
+        }
+    }
 }

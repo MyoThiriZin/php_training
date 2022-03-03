@@ -2,9 +2,7 @@
 
 namespace App\Contracts\Dao\Auth;
 
-
-
 interface AuthDaoInterface
 {
-  public function saveUser($request);
+    public function saveUser($request);
 }
