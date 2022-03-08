@@ -3,36 +3,29 @@
 namespace App\Imports;
 
 use App\Student;
-use Carbon\Carbon;
 use Maatwebsite\Excel\Concerns\ToModel;
-use Maatwebsite\Excel\Concerns\WithHeadingRow;
 
-
-class StudentsImport implements ToModel,WithHeadingRow
+class StudentsImport implements ToModel
 {
     /**
-     * @param array $row
-     *
-     * @return \Illuminate\Database\Eloquent\Model|null
-     */
-
-    public function transformDate($value, $format = 'Y-m-d')
-    {
-        try {
-            return \Carbon\Carbon::instance(\PhpOffice\PhpSpreadsheet\Shared\Date::excelToDateTimeObject($value));
-        } catch (\ErrorException $e) {
-            return \Carbon\Carbon::createFromFormat($format, $value);
-        }
-    }
-
+    * @param array $row
+    *
+    * @return \Illuminate\Database\Eloquent\Model|null
+    */
     public function model(array $row)
     {
+        //dd($row);
         return new Student([
-            'name' => $row['name'],
-            'email' => $row['email'],
-            'date_of_birth' =>  $this->transformDate($row['date_of_birth']),
-            'address' => $row['address'],
-            'major_id' => $row['major_id'],
+
+            
+            //
+            'first_name' =>$row['1'],
+            'last_name' => $row['2'],
+            'email' =>$row['3'],
+            'phone' => $row['4'],
+            'address' => $row['5'],
+            'major_id' => $row['6'],
+        
         ]);
     }
 }

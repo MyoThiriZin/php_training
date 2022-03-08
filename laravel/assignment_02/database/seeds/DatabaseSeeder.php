@@ -1,6 +1,6 @@
 <?php
 
-use App\Major;
+use Illuminate\Support\Str;
 use Illuminate\Database\Seeder;
 use Illuminate\Support\Facades\DB;
 
@@ -13,21 +13,9 @@ class DatabaseSeeder extends Seeder
      */
     public function run()
     {
-        $majors = [
-            "Laravel",
-            "Javascript",
-            "Ruby",
-            "Android",
-            "PHP",
-            "C#"
-        ];
-
-        foreach($majors as $major){
-            DB::table('majors')->insert([
-                'name' => $major,
-                'created_at' => date('Y-m-d H:m:s'),
-                'updated_at' => date('Y-m-d H:m:s'),
-            ]);
+        //DB::table('majors')->insert([
+        //    'name' => Str::random(10),
+        //]);
+         $this->call(MajorSeeder::class);
     }
-}
 }
