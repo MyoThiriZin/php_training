@@ -10,25 +10,53 @@ include 'connection.php';
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="design.css">
+    <link rel="stylesheet" href="fontawesome-free-6.0.0-beta3-web/css/all.min.css">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+
+    <link rel="stylesheet" href="style.css">
     <title>Login Page</title>
 </head>
 <body>
-    <div class="container">
-        <div class="form-sec">
-            <h2>Login Here</h2>
+<section class="vh-100 gradient-custom">
+  <div class="container py-5 h-100">
+    <div class="row d-flex justify-content-center align-items-center h-100">
+      <div class="col-12 col-md-8 col-lg-6 col-xl-5">
+        <div class="card bg-dark text-white" style="border-radius: 1rem;">
+          <div class="card-body p-5 text-center">
+
+            <div class="mb-md-5 mt-md-4 pb-5">
             <form method="post" action="login.php">
-                <?php if (isset($_GET['error'])) { ?>
+            <?php if (isset($_GET['error'])) { ?>
                 <p style="color:red;"><?php echo $_GET['error']; ?></p>
                 <?php } ?>
+              <h2 class="fw-bold mb-2 text-uppercase">Login</h2>
+              <p class="text-white-50 mb-5">Please enter your login and password!</p>
 
-                <input type="email" placeholder="Enter email" name="email"><br><br>
-                <input type="password" placeholder="Enter password" name="password"><br><br>
-                <input type="submit" name="login" value="Login"><br><br>
-                <div><a href="forgot.php">Forgot password?</a></div>
-                <div><p>Are you a new user? Please <a href="signup.php">register</a></p></div>
-            </form>
+              <div class="form-outline form-white mb-4">
+                <input type="email" placeholder="Enter email" name="email" id="typeEmailX" class="form-control form-control-lg" />
+                <label class="form-label" for="typeEmailX">Email</label>
+              </div>
+
+              <div class="form-outline form-white mb-4">
+                <input type="password" placeholder="Enter password" name="password" id="typePasswordX" class="form-control form-control-lg" />
+                <label class="form-label" for="typePasswordX">Password</label>
+              </div>
+
+              <p class="small mb-5 pb-lg-2"><a class="text-white-50" href="forgot.php">Forgot password?</a></p>
+
+              <button class="btn btn-outline-light btn-lg px-5" type="submit" name="login" value="Login">Login</button>
+
+            </div>
+
+            <div>
+              <p class="mb-0">Don't have an account? <a href="signup.php" class="text-white-50 fw-bold">Sign Up</a></p>
+            </div>
+</form>
+          </div>
         </div>
+      </div>
     </div>
+  </div>
+</section>
 </body>
 </html>

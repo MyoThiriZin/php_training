@@ -13,7 +13,7 @@ function Createdb(){
     $servername = "localhost";
     $username = "root";
     $password = "1234";
-    $dbname = "new_schema";
+    $dbname = "php_crud";
 
     // create connection
     $con = mysqli_connect($servername, $username, $password);

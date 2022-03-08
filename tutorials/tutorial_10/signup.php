@@ -34,13 +34,13 @@ if (isset($_GET['delete'])) {
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="design.css">
+    <link rel="stylesheet" href="fontawesome-free-6.0.0-beta3-web/css/all.min.css">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+
+    <link rel="stylesheet" href="style.css">
     <title>Signup Page</title>
 </head>
 <body>
-    <div class="container">
-        <div class="form-sec">
-            <h3>Signup</h3>
             <?php
             if (isset($message)) {
                 foreach ($message as $message) {
@@ -48,16 +48,46 @@ if (isset($_GET['delete'])) {
                 }
             }
             ?>
+<section class="vh-100 gradient-custom">
+  <div class="container py-5 h-100">
+    <div class="row d-flex justify-content-center align-items-center h-100">
+      <div class="col-12 col-md-8 col-lg-6 col-xl-5">
+        <div class="card bg-dark text-white" style="border-radius: 1rem;">
+          <div class="card-body p-5 text-center">
+
+            <div class="mb-md-5 mt-md-4 pb-5">
             <form action="signup.php" method="post" enctype="multipart/form-data">
-                <input type="text" placeholder="Enter username" name="user_name"><br><br>
-                <input type="password" placeholder="Enter password" name="password"><br><br>
-                <input type="email" placeholder="Enter email" name="email"><br><br>
-                <input type="submit" name="signup" value="Signup"><br><br>
-                <div>
-                    <p>Already have an account? <a href="index.php">Login</a></p>
-                </div>
-            </form>
+            <?php if (isset($_GET['error'])) { ?>
+                <p style="color:red;"><?php echo $_GET['error']; ?></p>
+                <?php } ?>
+              <h2 class="fw-bold mb-2 text-uppercase">Signup</h2>
+              <div class="form-outline form-white mb-4">
+                <input type="text" placeholder="Enter Username" name="user_name" id="typeEmailX" class="form-control form-control-lg" />
+                <label class="form-label" for="typeEmailX">Username</label>
+              </div>
+              <div class="form-outline form-white mb-4">
+                <input type="email" placeholder="Enter email" name="email" id="typeEmailX" class="form-control form-control-lg" />
+                <label class="form-label" for="typeEmailX">Email</label>
+              </div>
+
+              <div class="form-outline form-white mb-4">
+                <input type="password" placeholder="Enter password" name="password" id="typePasswordX" class="form-control form-control-lg" />
+                <label class="form-label" for="typePasswordX">Password</label>
+              </div>
+
+              <button class="btn btn-outline-light btn-lg px-5" type="submit" name="signup" value="Signup">Signup</button>
+
+            </div>
+
+            <div>
+            <p class="mb-0">Already have an account? <a href="index.php" class="text-white-50 fw-bold">Login</a></p>
+            </div>
+</form>
+          </div>
         </div>
+      </div>
     </div>
+  </div>
+</section>
 </body>
 </html>

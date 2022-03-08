@@ -6,6 +6,8 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Books</title>
     <link rel="stylesheet" href="fontawesome-free-6.0.0-beta3-web/css/all.min.css">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
@@ -15,22 +17,22 @@
 require_once ("component.php");
 require_once ("operation.php");
 ?>
-    <div>
-        <h1><i class="fas fa-swatchbook"></i> Book Store</h1>
+        <div class="container text-center">
+        <h1 class="py-4 bg-dark text-light rounded"><i class="fas fa-swatchbook"></i> Book Store</h1>
 
-        <div">
+        <div class="d-flex justify-content-center">
             <form action="" method="post" class="w-50">
-                <div>
+                <div class="pt-2">
                     <?php inputElement("<i class='fas fa-id-badge'></i>","ID", "book_id",setID()); ?>
                 </div>
-                <div>
+                <div class="pt-2">
                     <?php inputElement("<i class='fas fa-book'></i>","Book Name", "book_name",""); ?>
                 </div>
-                <div>
-                    <div>
+                <div class="row pt-2">
+                    <div class="col">
                         <?php inputElement("<i class='fas fa-people-carry'></i>","Publisher", "book_publisher",""); ?>
                     </div>
-                    <div>
+                    <div class="col">
                         <?php inputElement("<i class='fas fa-dollar-sign'></i>","Price", "book_price",""); ?>
                     </div>
                 </div>
