@@ -7,13 +7,11 @@ if (isset($_POST['signup'])) {
     $user_name = $_POST['user_name'];
     $password = $_POST['password'];
     $email = $_POST['email'];
-    $phone = $_POST['phone'];
-    $age = $_POST['age'];
 
-    if (empty($user_name) || empty($password) || empty($email) || empty($phone) || empty($age)) {
+    if (empty($user_name) || empty($password) || empty($email)) {
         $message[] = 'Please fill out all';
     } else {
-        $insert = "INSERT INTO users(user_name, password, email, phone, age) VALUES('$user_name', '$password', '$email', '$phone', '$age')";
+        $insert = "INSERT INTO users(user_name, password, email) VALUES('$user_name', '$password', '$email')";
         $upload = mysqli_query($conn,$insert);
         if ($upload) {
             $message[] = 'New user added successfully';
@@ -54,8 +52,6 @@ if (isset($_GET['delete'])) {
                 <input type="text" placeholder="Enter username" name="user_name"><br><br>
                 <input type="password" placeholder="Enter password" name="password"><br><br>
                 <input type="email" placeholder="Enter email" name="email"><br><br>
-                <input type="text" placeholder="Enter phone number" name="phone"><br><br>
-                <input type="text" placeholder="Enter age" name="age"><br><br>
                 <input type="submit" name="signup" value="Signup"><br><br>
                 <div>
                     <p>Already have an account? <a href="index.php">Login</a></p>
