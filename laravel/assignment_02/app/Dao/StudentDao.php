@@ -38,4 +38,9 @@ class StudentDao implements StudentDaoInterface{
     public function delete($student){
         return $student->delete();
     }
+    
+    public function export(){
+
+        return Excel::download(new StudentExport, 'students.csv');
+    }
 }

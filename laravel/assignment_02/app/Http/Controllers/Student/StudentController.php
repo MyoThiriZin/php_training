@@ -126,29 +126,19 @@ class StudentController extends Controller
     *
      * for import and export view
     */
-    public function importExportView()
+    public function export()
+    {
+        return $this->studentService->export();
+    }
+
+    public function import()
+    {
+        $this->studentService->import();
+        return redirect()->route('students');
+    }
+
+    public function importExportCsv()
     {
        return view('import');
-    }
-   
-    /**
-    * @return \Illuminate\Support\Collection
-    *
-     * export view
-    */
-    public function export() 
-    {
-        return Excel::download(new StudentsExport, 'students.xlsx');
-    }
-   
-    /**
-    * @return \Illuminate\Support\Collection
-    *
-     * import view
-    */
-    public function import(CSVRequest $request) 
-    {
-        Excel::import(new StudentsImport,$request->file('file'));
-        return back();
     }
 }

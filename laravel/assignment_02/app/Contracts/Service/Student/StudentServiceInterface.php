@@ -9,4 +9,5 @@ interface StudentServiceInterface {
     public function updateStudent(Request $request, $id);
 
     public function destroyStudent($id);
+
 }

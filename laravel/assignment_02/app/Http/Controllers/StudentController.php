@@ -2,7 +2,6 @@
 
 namespace App\Http\Controllers;
 
-use App\Contracts\Services\StudentServiceInterface;
 use App\Http\Requests\StoreStudentRequest;
 use App\Http\Requests\UpdateStudentRequest;
 use App\Exports\StudentsExport;
@@ -106,7 +105,22 @@ class StudentController extends Controller
 
         return redirect()->back()->with("success_msg", deletedMessage("Student"));
     }
+    public function export()
+    {
+        return $this->studentService->export();
+    }
 
+    public function import()
+    {
+        $this->studentService->import();
+        return redirect()->route('students');
+    }
+
+    public function importExportCsv()
+    {
+       return view('import');
+    }
+    /*
     public function export()
     {
         return $this->studentService->export();
@@ -122,5 +136,5 @@ class StudentController extends Controller
     public function importFile()
     {
        return view('students.import');
-    }
+    }*/
 }

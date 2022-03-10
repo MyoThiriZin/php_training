@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
 <head>
-    <title>Import Export  to database</title>
+    <title>Import Export Excel to database</title>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.1.3/css/bootstrap.min.css" />
 </head>
 <body>
@@ -9,10 +9,10 @@
 <div class="container">
     <div class="card bg-light mt-3">
         <div class="card-header">
-             Import Export Data 
+             Import Export Excel to database 
         </div>
         <div class="card-body">
-            <form action="{{ url('/import-csv') }}" method="POST" enctype="multipart/form-data">
+            <form action="{{ route('import') }}" method="POST" enctype="multipart/form-data">
                 @csrf
                 <input type="file" name="file" class="form-control">
                 <br>

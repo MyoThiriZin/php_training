@@ -8,8 +8,8 @@
     @endif
     
     <a href="{{route('students.create')}}" class="btn btn-success my-3">Create</a>
-    <a href="{{url('importExportView')}}" class="btn btn-success my-3 ml-auto">Import/Export</a>
-
+    <a href="{{url('/export-csv')}}" class="btn btn-success my-3 ml-auto">Export</a>
+    <a href="{{url('/import-export-csv')}}" class="btn btn-success my-3 ml-auto">Import</a>
   @if(count($students)>0)
     <table class='table mt-5 table-hover table-bordered'>
       <tr class="bg-secondary text-white">

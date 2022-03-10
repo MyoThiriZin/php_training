@@ -1,53 +1,51 @@
-<?php
-namespace App\Services;
+<?php 
 
-use App\Contracts\Dao\StudentDaoInterface;
-use App\Http\Requests\StoreStudentRequest;
-use App\Contracts\Services\StudentServiceInterface;
-use App\Exports\StudentsExport;
-use App\Imports\StudentsImport;
+namespace App\Services\Student;
+
+use Illuminate\Http\Request;
+use App\Contracts\Dao\Student\StudentDaoInterface;
+use App\Contracts\Service\Student\StudentServiceInterface;
+use App\Exports\StudentExport;
+use App\Imports\StudentImport;
 use Maatwebsite\Excel\Facades\Excel;
 
-class StudentService implements StudentServiceInterface{
+class StudentService implements StudentServiceInterface {
 
-    private $studentDao;
+    private $studentDaoInterface;
 
-    public function __construct(StudentDaoInterface $studentDao)
+    public function __construct(StudentDaoInterface $studentDaoInterface)
     {
-        $this->studentDao = $studentDao;
+        $this->studentDaoInterface = $studentDaoInterface;
     }
 
-    public function get(){
-
-        return $this->studentDao->get();
+    public function storeStudent(Request $request){
+        return $this->studentDaoInterface->storeStudent($request);
     }
 
-    public function getMajor(){
-
-        return $this->studentDao->getMajor();
+    public function updateStudent(Request $request, $id){
+        return $this->studentDaoInterface->updateStudent($request,$id);
     }
 
-    public function update($request,$student){
-
-        return $this->studentDao->update($request, $student);
+    public function destroyStudent($id){
+        return $this->studentDaoInterface->destroyStudent($id);
     }
 
-    public function create($request){
-
-        return $this->studentDao->create($request);
-
-    }
-    public function delete($student){
-        return $this->studentDao->delete($student);
+    public function getStudents(Request $request)
+    {
+        return $this->studentDaoInterface->getStudents($request);
     }
 
+    public function studentList()
+    {
+        return $this->studentDaoInterface->studentList();
+    }
     public function export(){
 
-        return Excel::download(new StudentsExport, 'student_data.csv');
+        return $this->studentDao->export();
     }
 
     public function import(){
 
-       return Excel::import(new StudentsImport,request()->file('file'));
+        return $this->studentDao->import();
     }
 }

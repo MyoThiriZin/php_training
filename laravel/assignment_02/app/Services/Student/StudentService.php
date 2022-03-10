@@ -26,4 +26,13 @@ class StudentService implements StudentServiceInterface {
     public function destroyStudent($id){
         return $this->studentDaoInterface->destroyStudent($id);
     }
+    public function export(){
+
+        return $this->studentDao->export();
+    }
+
+    public function import(){
+
+        return $this->studentDao->import();
+    }
 }

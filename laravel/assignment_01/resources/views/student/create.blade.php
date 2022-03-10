@@ -8,9 +8,16 @@
         <form action="{{ route('students.store') }}" method="POST">
           @csrf
           <div class="form-group mb-3">
-            <label for="f-name">Name</label>
-            <input type="text" class="form-control @error('name') is-invalid @enderror" name="name" id="f-name" value="{{ old('name')}}">
-            @error('name')
+            <label for="f-name">First Name</label>
+            <input type="text" class="form-control @error('first_name') is-invalid @enderror" name="first_name" id="f-name" value="{{ old('first_name')}}">
+            @error('first_name')
+              <div class="invalid-feedback">{{ $message }}</div>
+            @enderror
+          </div>
+          <div class="form-group mb-3">
+            <label for="l-name">Last Name</label>
+            <input type="text" class="form-control @error('last_name') is-invalid @enderror" name="last_name" id="l-name" value="{{ old('last_name')}}">
+            @error('last_name')
               <div class="invalid-feedback">{{ $message }}</div>
             @enderror
           </div>

@@ -9,9 +9,16 @@
           @csrf
           @method('PUT')
           <div class="form-group mb-3">
-            <label for="f-name">Name</label>
-            <input type="text" class="form-control @error('name') is-invalid @enderror" name="name" id="f-name" value="{{ $student->name ?? old('name')}}">
-            @error('name')
+            <label for="f-name">First Name</label>
+            <input type="text" class="form-control @error('first_name') is-invalid @enderror" name="first_name" id="f-name" value="{{ $student->first_name ?? old('first_name')}}">
+            @error('first_name')
+              <div class="invalid-feedback">{{ $message }}</div>
+            @enderror
+          </div>
+          <div class="form-group mb-3">
+            <label for="l-name">Last Name</label>
+            <input type="text" class="form-control @error('last_name') is-invalid @enderror" name="last_name" id="l-name" value="{{ $student->last_name ?? old('last_name')}}">
+            @error('last_name')
               <div class="invalid-feedback">{{ $message }}</div>
             @enderror
           </div>

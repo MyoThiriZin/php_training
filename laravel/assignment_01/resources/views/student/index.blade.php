@@ -8,12 +8,14 @@
     @endif
     
     <a href="{{route('students.create')}}" class="btn btn-success my-3">Create</a>
+    <a href="{{url('importExportView')}}" class="btn btn-success my-3 ml-auto">Import/Export</a>
 
   @if(count($students)>0)
     <table class='table mt-5 table-hover table-bordered'>
       <tr class="bg-secondary text-white">
         <th class="col">Id</th>
-        <th class="col">Name</th>
+        <th class="col">First Name</th>
+        <th class="col">Last Name</th>
         <th class="col">Email</th>
         <th class="col">Phone</th>
         <th class="col-md-2">Address</th>
@@ -24,7 +26,8 @@
       @foreach($students as $student)
       <tr>
         <td>{{ $student->id }}</td>
-        <td>{{ $student->name }}</td>
+        <td>{{ $student->first_name }}</td>
+        <td>{{ $student->last_name }}</td>
         <td>{{ $student->email }}</td>
         <td>{{ $student->phone }}</td>
         <td>{{ $student->address }}</td>

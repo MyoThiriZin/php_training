@@ -21,7 +21,6 @@ class CreateStudentsTable extends Migration
             $table->integer('phone')->nullable();
             $table->string('address', 255)->nullable();
             $table->foreignId('major_id')->constrained()->onDelete('cascade');
-            //$table->foreignId('major_id')->constrained()->onDelete('cascade');
             $table->timestamps();
         });
     }
