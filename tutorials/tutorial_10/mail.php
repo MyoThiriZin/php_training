@@ -16,7 +16,7 @@ function send_mail($recipient,$subject,$message)
     $mail->Port       = 587;
     $mail->Host       = "smtp.gmail.com";
     $mail->Username   = "myothirizin99@gmail.com";
-    $mail->Password   = "staystronglivehappy";
+    $mail->Password   = "umyowinanddawzinmarthindaughter";
 
     $mail->IsHTML(true);
     $mail->AddAddress($recipient, "esteemed customer");

@@ -18,7 +18,8 @@ if (isset($_SESSION['id']) && isset($_SESSION['user_name'])) {
 </head>
 <body>
 <body>
-    <div class="container">
+<section class="vh-100 gradient-custom">
+    <div class="container text-center">
         <h2>Hello, <?php echo $_SESSION['user_name']; ?></h2>
         <h3>Login successfully</h3>
         <?php
@@ -92,7 +93,11 @@ if (isset($_SESSION['id']) && isset($_SESSION['user_name'])) {
                 </tbody>
             </table>
         </div>
+        <form method="post" action="logout.php">
+        <button class="btn btn-outline-light btn-lg px-5" type="submit" name="logout" value="Logout">Logout</button>
+        </form>
     </div>
+ </section>
     
 <script src="jquery-3.6.0.min.js"></script>
 <script src="main.js"></script>

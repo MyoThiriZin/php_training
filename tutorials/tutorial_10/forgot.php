@@ -129,7 +129,9 @@ function valid_email($email)
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="design.css">
+    <link rel="stylesheet" href="fontawesome-free-6.0.0-beta3-web/css/all.min.css">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    <link rel="stylesheet" href="style.css">
     <title>Forgot Password</title>
 </head>
 <body>
@@ -139,11 +141,17 @@ function valid_email($email)
         case 'enter_email':
     ?>
 
-    <div class="container">
-        <div class="form-sec">
+<section class="vh-100 gradient-custom">
+  <div class="container py-5 h-100">
+    <div class="row d-flex justify-content-center align-items-center h-100">
+      <div class="col-12 col-md-8 col-lg-6 col-xl-5">
+        <div class="card bg-dark text-white" style="border-radius: 1rem;">
+          <div class="card-body p-5 text-center">
+
+            <div class="mb-md-5 mt-md-4 pb-5">
             <form method="post" action="forgot.php?mode=enter_email">
-                <h2>Forgot Password</h2>
-                <h3>Enter your email below</h3>
+            <h2 class="fw-bold mb-2 text-uppercase">Reset Password</h2>
+              <p class="text-white-50 mb-5">Enter your email below</p>
                 <span style="color:red;">
                     <?php
                         foreach ($error as $err) {
@@ -151,9 +159,11 @@ function valid_email($email)
                         }
                     ?>
                 </span>
-                <input type="email" placeholder="Email" name="email"><br><br>
-                <input type="submit" value="Next"><br><br>
-                <div><a href="index.php">Login</a></div>
+                <div class="form-outline form-white mb-4">
+                <input type="email" placeholder="Enter email" name="email" id="typeEmailX" class="form-control form-control-lg" />
+                <label class="form-label" for="typeEmailX">Email</label>
+              </div>
+              <button class="btn btn-outline-light btn-lg px-5" type="submit" name="next" value="Next">Next</button>
             </form>
         </div>
     </div>
