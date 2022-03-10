@@ -19,11 +19,12 @@ Route::get('/', function () {
 });
 
 Route::resource('students', 'Student\StudentController');
-/*
+
 Route::get('export', [StudentController::class,'export'])->name('export');
-Route::get('importExportView',[StudentController::class,':import-export-csv'] );
+Route::get('importExportCsv',[StudentController::class,':import-export-csv'] );
 Route::post('import', [StudentController::class,'import'])->name('import');
-*/
+
+/*
 Route::get('export-csv', 'StudentController@export');
 Route::post('import-csv', 'StudentController@import');
-Route::get('import-export-csv', 'StudentController@importExportCsv');
+Route::get('import-export-csv', 'StudentController@importExportCsv');*/

@@ -128,12 +128,12 @@ class StudentController extends Controller
     */
     public function export()
     {
-        return $this->studentService->export();
+        return $this->studentServiceInterface->export();
     }
 
     public function import()
     {
-        $this->studentService->import();
+        $this->studentServiceInterface->import();
         return redirect()->route('students');
     }
 

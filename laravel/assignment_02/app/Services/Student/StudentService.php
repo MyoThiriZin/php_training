@@ -28,11 +28,11 @@ class StudentService implements StudentServiceInterface {
     }
     public function export(){
 
-        return $this->studentDao->export();
+        return $this->studentDaoInterface->export();
     }
 
     public function import(){
 
-        return $this->studentDao->import();
+        return $this->studentDaoInterface->import();
     }
 }
