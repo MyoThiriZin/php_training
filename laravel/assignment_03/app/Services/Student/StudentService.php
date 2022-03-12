@@ -5,8 +5,8 @@ namespace App\Services\Student;
 use Illuminate\Http\Request;
 use App\Contracts\Dao\Student\StudentDaoInterface;
 use App\Contracts\Service\Student\StudentServiceInterface;
-use App\Exports\StudentExport;
-use App\Imports\StudentImport;
+use App\Exports\StudentsExport;
+use App\Imports\StudentsImport;
 use Maatwebsite\Excel\Facades\Excel;
 
 class StudentService implements StudentServiceInterface {

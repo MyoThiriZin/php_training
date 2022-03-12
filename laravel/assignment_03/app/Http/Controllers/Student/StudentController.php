@@ -134,7 +134,7 @@ class StudentController extends Controller
     public function import()
     {
         $this->studentServiceInterface->import();
-        return redirect()->route('students');
+        return redirect()->back();
     }
 
     public function importExportCsv()

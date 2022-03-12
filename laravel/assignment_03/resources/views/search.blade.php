@@ -10,15 +10,15 @@
 <table class="table">
     <thead>
         <tr class="table-warning">
-        <th class="col">Id</th>
-        <th class="col">First Name</th>
-        <th class="col">Last Name</th>
-        <th class="col">Email</th>
-        <th class="col">Phone</th>
-        <th class="col-md-2">Address</th>
-        <th class="col">Major</th>
-        <th class="col">Created at</th>
-        <th class="col">Action</th>
+        <th>Id</th>
+        <th>First Name</th>
+        <th>Last Name</th>
+        <th>Email</th>
+        <th>Phone</th>
+        <th>Address</th>
+        <th>Major</th>
+        <th>Created at</th>
+        <th>Action</th>
         </tr>
     </thead>
     <tbody>

@@ -7,7 +7,7 @@
             Import Student Data
         </div>
         <div class="card-body">
-            <form action="{{ url('/import') }}" method="POST" enctype="multipart/form-data">
+        <form action="{{route('import')}}" method="post" enctype="multipart/form-data">
                 @csrf
                 <div class="mb-3">
                     <label class="form-label">Choose Your File</label>

@@ -21,7 +21,7 @@ Route::get('/', function () {
 Route::resource('students', 'Student\StudentController');
 
 Route::get('export', [StudentController::class,'export'])->name('export');
-Route::get('importExportCsv',[StudentController::class,':import-export-csv'] );
+Route::get('importExportCsv',[StudentController::class,'import-export-csv'] );
 Route::post('import', [StudentController::class,'import'])->name('import');
 Route::get('search', [StudentController::class,'search']);
 
